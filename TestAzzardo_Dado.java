@@ -2,6 +2,8 @@
 public class TestAzzardo_Dado {
 
 	public static void main(String[] args) {
+		final int numeroTiri = 3000;  //numero di tiri per il test
+		final float percentualeTolleranza = ((numeroTiri * 15)/ 100);    //15% di tolleranza
 		
 		int ris1 = 0;
 		int ris2 = 0;
@@ -15,7 +17,7 @@ public class TestAzzardo_Dado {
 		Dado3 d3 = new Dado3();
 		
 		
-		for (int i=0; i<3000; i++) {
+		for (int i=0; i<numeroTiri; i++) {
 			int ris = d1.lancio();
 			
 			if (ris == 1) {
@@ -47,6 +49,13 @@ public class TestAzzardo_Dado {
 		System.out.println(ris5 + " volte il valore 5");
 		System.out.println(ris6 + " volte il valore 6");
 		
+		int maxVal = Math.max(ris1, Math.max(ris2, Math.max(ris3, Math.max(ris4, Math.max(ris5, ris6)))));
+		int minVal = Math.min(ris1, Math.min(ris2, Math.min(ris3, Math.min(ris4, Math.min(ris5, ris6)))));
+		
+		if ((maxVal - minVal) > percentualeTolleranza) {
+			System.out.println("Dado 1 e' truccato");
+		}
+		
 		// dado 2
 		ris1 = 0;
 		ris2 = 0;
@@ -56,7 +65,7 @@ public class TestAzzardo_Dado {
 		ris6 = 0;
 		
 
-		for (int i=0; i<3000; i++) {
+		for (int i=0; i<numeroTiri; i++) {
 			int ris = d2.lancio();
 			
 			if (ris == 1) {
@@ -88,6 +97,13 @@ public class TestAzzardo_Dado {
 		System.out.println(ris5 + " volte il valore 5");
 		System.out.println(ris6 + " volte il valore 6");
 		
+		maxVal = Math.max(ris1, Math.max(ris2, Math.max(ris3, Math.max(ris4, Math.max(ris5, ris6)))));
+		minVal = Math.min(ris1, Math.min(ris2, Math.min(ris3, Math.min(ris4, Math.min(ris5, ris6)))));
+		
+		if ((maxVal - minVal) > percentualeTolleranza) {
+			System.out.println("Dado 2 e' truccato");
+		}
+		
 		
 		// dado 3
 				ris1 = 0;
@@ -98,7 +114,7 @@ public class TestAzzardo_Dado {
 				ris6 = 0;
 				
 
-				for (int i=0; i<3000; i++) {
+				for (int i=0; i<numeroTiri; i++) {
 					int ris = d3.lancio();
 					
 					if (ris == 1) {
@@ -129,6 +145,13 @@ public class TestAzzardo_Dado {
 				System.out.println(ris4 + " volte il valore 4");
 				System.out.println(ris5 + " volte il valore 5");
 				System.out.println(ris6 + " volte il valore 6");
+				
+				maxVal = Math.max(ris1, Math.max(ris2, Math.max(ris3, Math.max(ris4, Math.max(ris5, ris6)))));
+				minVal = Math.min(ris1, Math.min(ris2, Math.min(ris3, Math.min(ris4, Math.min(ris5, ris6)))));
+				
+				if ((maxVal - minVal) > percentualeTolleranza) {
+					System.out.println("Dado 2 e' truccato");
+				}
 	}
 
 }
