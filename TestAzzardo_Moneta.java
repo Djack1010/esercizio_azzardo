@@ -4,6 +4,8 @@ public class TestAzzardo_Moneta {
 	public static void main(String[] args) {
 		
 		int result;
+
+		// imposto il numero dei lanci delle monete
 		final int NUM_LANCI = 5000;
 
 		// contatori per i risultati TESTA e CROCE
