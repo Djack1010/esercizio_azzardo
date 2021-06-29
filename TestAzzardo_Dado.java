@@ -5,6 +5,9 @@ public class TestAzzardo_Dado {
 		
 		int result;
 
+		// valore di controllo delle percentuali
+		final double VALORE_MEDIO = 100 / 6;
+
 		// imposto il numero dei lanci dei dadi
 		final int NUM_LANCI = 5000;
 
@@ -15,6 +18,11 @@ public class TestAzzardo_Dado {
 		int cont4 = 0;
 		int cont5 = 0;
 		int cont6 = 0;
+
+		// variabili booleane per verificare se i dadi sono truccati
+		boolean checkDado1 = false;
+		boolean checkDado2 = false;
+		boolean checkDado3 = false;
 
 		// variabili che conterrano la percentuale di uscita delle 6 facce
 		double percentuale1;
@@ -64,6 +72,22 @@ public class TestAzzardo_Dado {
 		System.out.println("Faccia 4: " +cont4 +" su " +NUM_LANCI + " lanci. (" +percentuale4 +"%)");
 		System.out.println("Faccia 5: " +cont5 +" su " +NUM_LANCI + " lanci. (" +percentuale5 +"%)");
 		System.out.println("Faccia 6: " +cont6 +" su " +NUM_LANCI + " lanci. (" +percentuale6 +"%)");
+
+		// verifico se il primo dado è truccato 
+		// dico che un dado è truccato se una faccia di una moneta compare con una
+		// percentuale che si discosta di almeno 5 punti rispetto alla norma
+		if ((percentuale1 <= (VALORE_MEDIO - 5)) || (percentuale1 >= (VALORE_MEDIO + 5)))
+			checkDado1 = true;
+		if ((percentuale2 <= (VALORE_MEDIO - 5)) || (percentuale2 >= (VALORE_MEDIO + 5)))
+			checkDado1 = true;
+		if ((percentuale3 <= (VALORE_MEDIO - 5)) || (percentuale3 >= (VALORE_MEDIO + 5)))
+			checkDado1 = true;
+		if ((percentuale4 <= (VALORE_MEDIO - 5)) || (percentuale4 >= (VALORE_MEDIO + 5)))
+			checkDado1 = true;
+		if ((percentuale5 <= (VALORE_MEDIO - 5)) || (percentuale5 >= (VALORE_MEDIO + 5)))
+			checkDado1 = true;
+		if ((percentuale6 <= (VALORE_MEDIO - 5)) || (percentuale6 >= (VALORE_MEDIO + 5)))
+			checkDado1 = true;
 		
 		// Testo il dado d2
 		cont1 = cont2 = cont3 = cont4 = cont5 = cont6 = 0;
@@ -102,6 +126,22 @@ public class TestAzzardo_Dado {
 		System.out.println("Faccia 5: " +cont5 +" su " +NUM_LANCI + " lanci. (" +percentuale5 +"%)");
 		System.out.println("Faccia 6: " +cont6 +" su " +NUM_LANCI + " lanci. (" +percentuale6 +"%)");
 
+		// verifico se il secondo dado è truccato 
+		// dico che un dado è truccato se una faccia di una moneta compare con una
+		// percentuale che si discosta di almeno 5 punti rispetto alla norma
+		if ((percentuale1 <= (VALORE_MEDIO - 5)) || (percentuale1 >= (VALORE_MEDIO + 5)))
+			checkDado2 = true;
+		if ((percentuale2 <= (VALORE_MEDIO - 5)) || (percentuale2 >= (VALORE_MEDIO + 5)))
+			checkDado2 = true;
+		if ((percentuale3 <= (VALORE_MEDIO - 5)) || (percentuale3 >= (VALORE_MEDIO + 5)))
+			checkDado2 = true;
+		if ((percentuale4 <= (VALORE_MEDIO - 5)) || (percentuale4 >= (VALORE_MEDIO + 5)))
+			checkDado2 = true;
+		if ((percentuale5 <= (VALORE_MEDIO - 5)) || (percentuale5 >= (VALORE_MEDIO + 5)))
+			checkDado2 = true;
+		if ((percentuale6 <= (VALORE_MEDIO - 5)) || (percentuale6 >= (VALORE_MEDIO + 5)))
+			checkDado2 = true;
+
 		// Testo il dado d3
 		cont1 = cont2 = cont3 = cont4 = cont5 = cont6 = 0;
 		for (int i=0; i<NUM_LANCI; i++) {
@@ -138,6 +178,29 @@ public class TestAzzardo_Dado {
 		System.out.println("Faccia 4: " +cont4 +" su " +NUM_LANCI + " lanci. (" +percentuale4 +"%)");
 		System.out.println("Faccia 5: " +cont5 +" su " +NUM_LANCI + " lanci. (" +percentuale5 +"%)");
 		System.out.println("Faccia 6: " +cont6 +" su " +NUM_LANCI + " lanci. (" +percentuale6 +"%)");
+
+		// verifico se il terzo dado è truccato 
+		// dico che un dado è truccato se una faccia di una moneta compare con una
+		// percentuale che si discosta di almeno 5 punti rispetto alla norma
+		if ((percentuale1 <= (VALORE_MEDIO - 5)) || (percentuale1 >= (VALORE_MEDIO + 5)))
+			checkDado3 = true;
+		if ((percentuale2 <= (VALORE_MEDIO - 5)) || (percentuale2 >= (VALORE_MEDIO + 5)))
+			checkDado3 = true;
+		if ((percentuale3 <= (VALORE_MEDIO - 5)) || (percentuale3 >= (VALORE_MEDIO + 5)))
+			checkDado3 = true;
+		if ((percentuale4 <= (VALORE_MEDIO - 5)) || (percentuale4 >= (VALORE_MEDIO + 5)))
+			checkDado3 = true;
+		if ((percentuale5 <= (VALORE_MEDIO - 5)) || (percentuale5 >= (VALORE_MEDIO + 5)))
+			checkDado3 = true;
+		if ((percentuale6 <= (VALORE_MEDIO - 5)) || (percentuale6 >= (VALORE_MEDIO + 5)))
+			checkDado3 = true;
+
+		if (checkDado1)
+			System.out.println("\nIl dado truccato e' il numero UNO ");
+		if (checkDado2)
+			System.out.println("\nIl dado truccato e' il numero DUE");
+		if (checkDado3)
+			System.out.println("\nIl dado truccato e' il numero TRE");
 	}
 
 }
