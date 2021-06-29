@@ -9,4 +9,4 @@ Una volta risolto, modificare anche questo file README.md inserendo qua sotto la
 ---
 
 ## SOLUZIONE
-la moneta truccata è la (XXX) mentre il Dado truccato è il (XXX)
+la moneta truccata è la (prima) mentre il Dado truccato è il (terzo)
