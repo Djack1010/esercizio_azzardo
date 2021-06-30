@@ -1,9 +1,7 @@
-
 public class TestAzzardo_Dado {
 
 	public static void main(String[] args) {
 
-		int result;
 		int tiri = 3000;
 		float tolleranza = (tiri * 10) / 100;
 		int res1 = 0;
@@ -51,14 +49,15 @@ public class TestAzzardo_Dado {
 				break;
 
 			}
-			System.out.println("Dado 1: ");
-			System.out.println(res1 + " volte faccia 1");
-			System.out.println(res2 + " volte faccia 2");
-			System.out.println(res3 + " volte faccia 3");
-			System.out.println(res4 + " volte faccia 4");
-			System.out.println(res5 + " volte faccia 5");
-			System.out.println(res6 + " volte faccia 6");
 		}
+		
+		System.out.println("Dado 1: ");
+		System.out.println(res1 + " volte faccia 1");
+		System.out.println(res2 + " volte faccia 2");
+		System.out.println(res3 + " volte faccia 3");
+		System.out.println(res4 + " volte faccia 4");
+		System.out.println(res5 + " volte faccia 5");
+		System.out.println(res6 + " volte faccia 6");
 
 		massimo = Math.max(res1, Math.max(res2, Math.max(res3, Math.max(res4, Math.max(res5, res6)))));
 		minimo = Math.min(res1, Math.min(res2, Math.min(res3, Math.min(res4, Math.min(res5, res6)))));
@@ -104,14 +103,15 @@ public class TestAzzardo_Dado {
 				break;
 
 			}
-			System.out.println("Dado 2: ");
-			System.out.println(res1 + " volte faccia 1");
-			System.out.println(res2 + " volte faccia 2");
-			System.out.println(res3 + " volte faccia 3");
-			System.out.println(res4 + " volte faccia 4");
-			System.out.println(res5 + " volte faccia 5");
-			System.out.println(res6 + " volte faccia 6");
 		}
+		
+		System.out.println("Dado 2: ");
+		System.out.println(res1 + " volte faccia 1");
+		System.out.println(res2 + " volte faccia 2");
+		System.out.println(res3 + " volte faccia 3");
+		System.out.println(res4 + " volte faccia 4");
+		System.out.println(res5 + " volte faccia 5");
+		System.out.println(res6 + " volte faccia 6");
 
 		massimo = Math.max(res1, Math.max(res2, Math.max(res3, Math.max(res4, Math.max(res5, res6)))));
 		minimo = Math.min(res1, Math.min(res2, Math.min(res3, Math.min(res4, Math.min(res5, res6)))));
@@ -157,14 +157,15 @@ public class TestAzzardo_Dado {
 				break;
 
 			}
-			System.out.println("Dado 3: ");
-			System.out.println(res1 + " volte faccia 1");
-			System.out.println(res2 + " volte faccia 2");
-			System.out.println(res3 + " volte faccia 3");
-			System.out.println(res4 + " volte faccia 4");
-			System.out.println(res5 + " volte faccia 5");
-			System.out.println(res6 + " volte faccia 6");
 		}
+		
+		System.out.println("Dado 3: ");
+		System.out.println(res1 + " volte faccia 1");
+		System.out.println(res2 + " volte faccia 2");
+		System.out.println(res3 + " volte faccia 3");
+		System.out.println(res4 + " volte faccia 4");
+		System.out.println(res5 + " volte faccia 5");
+		System.out.println(res6 + " volte faccia 6");
 
 		massimo = Math.max(res1, Math.max(res2, Math.max(res3, Math.max(res4, Math.max(res5, res6)))));
 		minimo = Math.min(res1, Math.min(res2, Math.min(res3, Math.min(res4, Math.min(res5, res6)))));
