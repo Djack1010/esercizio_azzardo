@@ -25,66 +25,23 @@ public class TestAzzardo_Moneta {
 		Moneta1 m1 = new Moneta1();
 		Moneta2 m2 = new Moneta2();
 		
-		// Testo la moneta m1	
-		for (int i=0; i<NUM_LANCI; i++) {
+		float counter_m1 = 0;
+		float counter_m2 = 0;
+		int numero_lanci = 999999;
 
-			result = m1.lancio();
-			
-			if (result == 0)
-				contTesta++;
-			if (result == 1)
-				contCroce++;
+		for(int i=0; i<numero_lanci;i++){
+
+			counter_m1 += m1.lancio();
+			counter_m2 += m2.lancio();
+		
 		}
 
-		// mostro le percentuali con al massimo 2 cifre decimali
-		percentualeTestaM1 = Math.round(((contTesta * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentualeCroceM1 = Math.round(((contCroce * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		System.out.println("\nRisultati del lancio della moneta 1");
-		System.out.println("===================================");
-		System.out.println("Testa: " +contTesta +" su " +NUM_LANCI + " lanci. (" +percentualeTestaM1 +"%)");
-		System.out.println("Croce: " +contCroce +" su " +NUM_LANCI + " lanci. (" +percentualeCroceM1 +"%)");
-	    
-	    // verifico se la moneta e' truccata
-	    // ammetto che e' truccata se una percentuale è maggiore dell'altra di almeno 10 punti
-	   	if ((percentualeTestaM1 <= (percentualeCroceM1 - 10)) || (percentualeTestaM1 >= (percentualeCroceM1 + 10))) {
-	   		checkMoneta1 = true;
-	   	}
+		float media_m1 = counter_m1 / numero_lanci;
+		float media_m2 = counter_m2 / numero_lanci;
+		
+		System.out.println("Media moneta 1: " + media_m1);
+		System.out.println("Media moneta 2: " + media_m2);
 
-		// Testo la moneta m2
-		// variabili che conterrano la percentuale di uscita delle 2 opzioni
-		double percentualeTestaM2;
-		double percentualeCroceM2;
-
-		contTesta = contCroce = 0;
-
-		for (int i=0; i<NUM_LANCI; i++) {
-
-			result = m2.lancio();
-			
-			if (result == 0)
-				contTesta++;
-			if (result == 1)
-				contCroce++;
-		}
-		// mostro le percentuali con al massimo 2 cifre decimali
-		percentualeTestaM2 = Math.round(((contTesta * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentualeCroceM2 = Math.round(((contCroce * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		System.out.println("\nRisultati del lancio della moneta 2");
-		System.out.println("===================================");
-		System.out.println("Testa: " +contTesta +" su " +NUM_LANCI + " lanci. (" +percentualeTestaM2 +"%)");
-		System.out.println("Croce: " +contCroce +" su " +NUM_LANCI + " lanci. (" +percentualeCroceM2 +"%)");
-
-		// verifico se la moneta e' truccata
-	    // ammetto che e' truccata se una percentuale è maggiore dell'altra di almeno 10 punti
-	    if ((percentualeTestaM2 <= (percentualeCroceM2 - 10)) || (percentualeTestaM2 >= (percentualeCroceM2 + 10))) {
-	   		checkMoneta1 = true;
-	    }
-
-		if (checkMoneta1)
-			System.out.println("\nLa moneta truccata e' la UNO");
-
-		if (checkMoneta2)
-			System.out.println("\nLa moneta truccata e' la DUE");
 	}
 
 

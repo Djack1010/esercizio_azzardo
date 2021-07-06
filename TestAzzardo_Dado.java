@@ -37,57 +37,20 @@ public class TestAzzardo_Dado {
 		Dado2 d2 = new Dado2();
 		Dado3 d3 = new Dado3();
 		
-		// Testo il dado d1
-		for (int i=0; i<NUM_LANCI; i++) {
-
-			result = d1.lancio();
-			
-			if (result == 1)
-				cont1++;
-			if (result == 2)
-				cont2++;
-			if (result == 3)
-				cont3++;
-			if (result == 4)
-				cont4++;
-			if (result == 5)
-				cont5++;
-			if (result == 6)
-				cont6++;
+		float counter1 = 0;
+		float counter2 = 0;
+		float counter3 = 0;
+		int iterazioni = 999999;
+		for (int i = 0; i < iterazioni; i++){
+		  System.out.println(i);
+		  counter1 += d1.lancio();
+		  counter2 += d2.lancio();
+		  counter3 += d3.lancio();
 		}
-
-		// mostro le percentuali con al massimo 2 cifre decimali
-		percentuale1 = Math.round(((cont1 * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentuale2 = Math.round(((cont2 * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentuale3 = Math.round(((cont3 * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentuale4 = Math.round(((cont4 * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentuale5 = Math.round(((cont5 * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-		percentuale6 = Math.round(((cont6 * 100.0) / NUM_LANCI) * 100.0) / 100.0;
-
-		System.out.println("\nRisultati del lancio del primo dado");
-		System.out.println("=====================================");
-		System.out.println("Faccia 1: " +cont1 +" su " +NUM_LANCI + " lanci. (" +percentuale1 +"%)");
-		System.out.println("Faccia 2: " +cont2 +" su " +NUM_LANCI + " lanci. (" +percentuale2 +"%)");
-		System.out.println("Faccia 3: " +cont3 +" su " +NUM_LANCI + " lanci. (" +percentuale3 +"%)");
-		System.out.println("Faccia 4: " +cont4 +" su " +NUM_LANCI + " lanci. (" +percentuale4 +"%)");
-		System.out.println("Faccia 5: " +cont5 +" su " +NUM_LANCI + " lanci. (" +percentuale5 +"%)");
-		System.out.println("Faccia 6: " +cont6 +" su " +NUM_LANCI + " lanci. (" +percentuale6 +"%)");
-
-		// verifico se il primo dado è truccato 
-		// dico che un dado è truccato se una faccia di una moneta compare con una
-		// percentuale che si discosta di almeno 5 punti rispetto alla norma
-		if ((percentuale1 <= (VALORE_MEDIO - 5)) || (percentuale1 >= (VALORE_MEDIO + 5)))
-			checkDado1 = true;
-		if ((percentuale2 <= (VALORE_MEDIO - 5)) || (percentuale2 >= (VALORE_MEDIO + 5)))
-			checkDado1 = true;
-		if ((percentuale3 <= (VALORE_MEDIO - 5)) || (percentuale3 >= (VALORE_MEDIO + 5)))
-			checkDado1 = true;
-		if ((percentuale4 <= (VALORE_MEDIO - 5)) || (percentuale4 >= (VALORE_MEDIO + 5)))
-			checkDado1 = true;
-		if ((percentuale5 <= (VALORE_MEDIO - 5)) || (percentuale5 >= (VALORE_MEDIO + 5)))
-			checkDado1 = true;
-		if ((percentuale6 <= (VALORE_MEDIO - 5)) || (percentuale6 >= (VALORE_MEDIO + 5)))
-			checkDado1 = true;
+		
+		System.out.println("Media Dado1: " + counter1 / iterazioni);
+		System.out.println("Media Dado2: " +counter2 / iterazioni);
+		System.out.println("Media Dado3: " +counter3 / iterazioni);
 		
 		// Testo il dado d2
 		cont1 = cont2 = cont3 = cont4 = cont5 = cont6 = 0;
